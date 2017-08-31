@@ -15,13 +15,13 @@ module.exports = {
         let possibilities = [];
         let suiteIndex = 0;
 
-        _.forEach(suites, (value, key) => {
+        _.forEach(suites, (value, suit) => {
 
             for (var i=0; i < ranks.length - 4; i++) {
                 let hand = _.take(_.drop(ranks, i), 5);
                 suiteIndex++;
-                possibilities[suiteIndex] = hand.map((val) => {
-                    return val + key;
+                possibilities[suiteIndex] = hand.map((rank) => {
+                    return rank + suit;
                 });
             }
 
@@ -33,9 +33,53 @@ module.exports = {
     'four-of-a-kind': () => {
         let possibilities = [];
 
-        ranks.forEach((value, index) => {
-            possibilities[index] = _.map(_.keys(suites), (key) => {
-                return value + key;
+        ranks.forEach((rank, index) => {
+            possibilities[index] = _.map(_.keys(suites), (suit) => {
+                return rank + suit;
+            });
+        });
+
+        return possibilities;
+    },
+
+    'full-house': () => {
+        let possibilities = {
+            triplet: [],
+            pair: []
+        };
+        let tripletIndex = 0,
+            pairIndex = 0;
+
+        let fullHouseSuites = {
+            triplet: {
+                0: ['C','D','H'],
+                1: ['C','D','S'],
+                2: ['C','H','S'],
+                3: ['D','H','S'],
+                4: ['D','H','S']
+            },
+            pair: {
+                0: ['C','D'],
+                1: ['C','H'],
+                2: ['C','S'],
+                3: ['D','H'],
+                4: ['D','S'],
+                5: ['H','S'],
+            }
+        };
+
+        ranks.forEach((rank) => {
+
+            _.forEach(fullHouseSuites['triplet'], (triplet) => {
+                tripletIndex++;
+
+                possibilities['triplet'][tripletIndex] = triplet.map(suit => rank+suit);
+            });
+
+            _.forEach(fullHouseSuites['pair'], (pair) => {
+                pairIndex++;
+
+                possibilities['pair'][pairIndex] = pair.map(suit => rank+suit);
             });
         });
 
