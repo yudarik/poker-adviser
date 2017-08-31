@@ -5,6 +5,14 @@ The purpose of this code challenge is to demonstrate problem solving and code qu
 Unless otherwise specified when receiving this excercise, 
 any language can be used to solve the problem and any libraries may be used except any Poker related libraries.  
 
+Install and dependancies
+---------
+- Dependency: Node 6.11 or higher
+* install: *
+git clone https://github.com/yudarik/poker-adviser.git
+cd poker-adviser && npm install
+node server
+
 The Problem
 -----------
 In 5-card draw poker, a player is dealt a hand of five cards (which may be looked at). 
@@ -59,11 +67,6 @@ Hand: 3D 5S 2H QD TD Deck: 6S KH 9H AD QH Best hand: highest-card
 References
 ----------
  - Possible Poker Hands: https://en.wikipedia.org/wiki/List_of_poker_hand_categories  
- 
-Install and dependancies
----------
-- Dependency: Node 6.11 or higher
-- Install dependencies: npm install
-- Run: node server
+
 
 
