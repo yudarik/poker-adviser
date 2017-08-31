@@ -5,10 +5,11 @@ The purpose of this code challenge is to demonstrate problem solving and code qu
 Unless otherwise specified when receiving this excercise, 
 any language can be used to solve the problem and any libraries may be used except any Poker related libraries.  
 
-Install and dependancies
+Dependancies
 ---------
 - Dependency: Node 6.11 or higher
-- install:
+Install
+-------
 
 - git clone https://github.com/yudarik/poker-adviser.git
 - cd poker-adviser && npm install
