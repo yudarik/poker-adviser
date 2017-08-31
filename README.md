@@ -8,8 +8,9 @@ any language can be used to solve the problem and any libraries may be used exce
 Dependancies
 ---------
 - Dependency: Node 6.11 or higher
-Install
--------
+
+Install and run
+-----------
 
 - git clone https://github.com/yudarik/poker-adviser.git
 - cd poker-adviser && npm install
